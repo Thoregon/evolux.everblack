@@ -12,16 +12,26 @@ Shared secrets generation
 
 - procedure
 
+``` javascript
     const shared = async () => {
         let alice = await SEA.pair();
         let bob = await SEA.pair();
         let shared1 =  await SEA.secret(bob.epub, alice);
         let enc = await SEA.encrypt('This can only be read by alice & bob', shared1);
-        let shared2 = await SEA.secret(alice.epub, bob);
+        let shared2 = await SEA.secret(alice.epub, bob);    // .secret is Elliptic-curve Diffie–Hellman
         let dec = await SEA.decrypt(enc, shared2);
         universe.logger.info('[everblack]',dec);
     };
+```
 
+Gun Security:
+- https://gun.eco/docs/SEA
+- https://gun.eco/docs/User
+- https://gun.eco/docs/Auth
+- https://gun.eco/docs/FAQ#acl
+- https://gun.eco/docs/Security
+- https://gun.eco/docs/Privacy-What-You-Need-To-Know
+- https://gun.eco/docs/Security%2C-Authentication%2C-Authorization
 
 ## Persistence
 
