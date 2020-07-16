@@ -6,6 +6,97 @@ If you share information, it can never be taken back.
 
 Requires and identity (user). This identity should be secured with 2 factor authentication.
 
+in a distributed system there are potential security threats,
+which we encounter with everblack:
+
+- unauthorized access
+- unauthorized tampering
+- denial of service
+
+security            -> https://xkcd.com/538/
+password strength   -> https://xkcd.com/936/
+sql injects         -> https://xkcd.com/327/
+
+everblack provides attribute encryption
+
+## Scenarios
+
+### Private use
+Encryption/decryption only for the user, no shared data 
+
+### Public use, share encrypted data
+
+User sends a command to a public bounded context
+- share encrypted data
+- between
+    - users
+    - bounded contexts and roles
+
+Process for A and B. A and B  can be users, roles, bounded contexts and other entities - mixed together - supporting encryption
+- through the wormhole (to other side)
+    - A generates a shared key using its pair (private key) and the public key from B
+    - A ecrypts the data with the shared key
+    - A signs the encrypted data with its pair (private key)
+    - encrypted and signed data stored in specified property
+
+- out of the wormhole (to this side)
+    - B generates a shared key using its pair (private key) and the public key from A
+    - B verifies the data from the specified property with the public key from A -> exit if it fails
+    - B decrypts the encrypted data with its pair (private key)
+    - stores decrypted data in the specified property
+
+## Role based encryption 
+Used to implement role based access control to stored data. a permissions spec is stored 
+in the everblack control property.
+
+### Permissions
+
+Permissions are granted by attesting a verifiable claim to an identity
+
+the list of properties specifies the data you can decrypt with the shared key for this role.
+if the access is 'W' for write, you are also allowed to store encrypted data in the property.
+well technically you can write locally to a property you are not allowed, but the firewall adapters
+on other peers and also your local storage engine will reject it. 
+it will also be overwritten by the original value. 
+
+this applies also to changes to the permissions itself. only changes which can be verified with
+the pub key of the admin (role) will be accepted by other peers. 
+an exchange of the admin role will only accepted if the 'proof' can be verified with the previous pub key.
+initially the 'proof' is empty.
+
+``` javascript
+permissions: {
+    pub: <public key of the admin (role) to grant/revoke permissions>,
+    proof: <a proof which can be verified with the previous admin pub key>,
+    roles: {
+        <rolename>: <encrypted control data>
+    }
+}
+
+// the decrypted control contains  
+control: {
+    key: <shared key to decrypt the entry>
+    properties: {
+        <propertyname>: {
+            pub: <public key of the last writer for verify>
+        }
+    },
+    access: 'R' | 'W'
+}
+```
+
+Process for R(ole):
+- prepare for use
+    - get the control data for R
+    - verify the control data with the admin pub key -> exit if it fails
+    - decrypt the control data with priv key from R
+    - get the shared key from control data
+
+Process for A(dmin):
+- prepare for create
+
+- change admin pub key
+
 ## Shared secrets
 
 Shared secrets generation
@@ -35,13 +126,9 @@ Gun Security:
 
 ## Persistence
 
-Encode/Sign -> Decode/Verify
+Encode/Sign -> Verify/Decode/
 
-- 
 
-## Permissions
-
-Permissions are granted by attesting a verifiable claim to an identity
 
 ### Create Identity
 
