@@ -19,6 +19,13 @@ sql injects         -> https://xkcd.com/327/
 
 everblack provides attribute encryption
 
+## BlackObject stucture
+
+Each black object grants access to its 'direct' attributes.
+References to other objects may also be a black object.
+
+the permission metadata stored in the attribute 't͛eb' (thoregon everblack).
+
 ## Scenarios
 
 ### Private use
@@ -48,6 +55,9 @@ Process for A and B. A and B  can be users, roles, bounded contexts and other en
 ## Role based encryption 
 Used to implement role based access control to stored data. a permissions spec is stored 
 in the everblack control property.
+
+
+
 
 ### Permissions
 
