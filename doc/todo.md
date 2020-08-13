@@ -17,3 +17,7 @@ Further information:
 - Role Hierarchies
 - RSBAC - rule set based access control
 - SARBAC model - scoped adminstrative RBAC
+
+- gun firewall
+    - check for 't͛' property on stored item
+    - T.d  ... owner signed drop command; check signature for admin
