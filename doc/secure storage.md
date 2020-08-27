@@ -23,7 +23,26 @@ to avoid tracking the key for member entries will be generated:
 Secure stores must not only provide secrecy, but must also prevent tracking.
 
 Secure stores can be used by entities implementing the identity API.
-Wrap keypairs with an IdentityShim.
+Wrap keypairs with an IdentityShim, let them act like an identity.
+
+### One Owner
+Owned by a single keypair.
+Can be public, everyone can write, post can be only decrypted by the client or the owner, none else can read/modify.
+
+- Service Queue
+
+- Message Queue
+
+No Response neccessary, but with 'ctrl' and 'sctrl' the status can be published 
+
+### Multiple Attendents
+- Channel/Topic
+
+- Collection
+
+- Key Value
+
+
 
 ### Private Store
 
