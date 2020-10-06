@@ -21,3 +21,5 @@ Further information:
 - gun firewall
     - check for 't͛' property on stored item
     - T.d  ... owner signed drop command; check signature for admin
+    - DNS attacs, accept only a number of 'put' to a 'address'
+        - specify in the secure store
