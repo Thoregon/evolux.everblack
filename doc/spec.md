@@ -19,7 +19,17 @@ sql injects         -> https://xkcd.com/327/
 
 everblack provides attribute encryption
 
-## BlackObject stucture
+## Freedom of algorithms
+Basic algorithms used for encryption/decryption, key generation, also
+for the management and processing of the stored data must be freely selectable by the user.
+
+Everblack defines APIs for the different use cases. Users can choose those implementations
+they trust. There is no forced installation, users can always  always reject it.
+
+The everblack components offer a special shop where components are 
+registered, tested and evaluated.
+
+## BlackObject structure
 
 Each black object grants access to its 'direct' attributes.
 References to other objects may also be a black object.
