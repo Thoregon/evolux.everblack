@@ -1,6 +1,9 @@
 ToDo
 ====
 
+- Clone secret objects to a new address
+- Cleanup/purge/delete secret objects
+
 - Achieving Secure Role-Based Access Control on Encrypted Data in Cloud Storage
     --> IEEE Article: https://ieeexplore.ieee.org/document/6642048
 
