@@ -16,4 +16,8 @@ export { default as VaultFileStore }    from './lib/vault/storage/vaultfilestore
 export { default as SharedCrypto }      from './lib/identity/sharedcrypto.mjs';
 export { default as IdentityShim }      from './lib/identity/identityshim.mjs';
 
+/*
+ * Secure and Secret Entities
+ */
+
 export const service = new Everblack();
