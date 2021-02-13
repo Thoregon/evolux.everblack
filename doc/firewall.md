@@ -25,4 +25,10 @@ Payload
 -> reject payload
 
 
+PoW Examples
+
+- https://www.savjee.be/2017/09/Implementing-proof-of-work-javascript-blockchain/
+- https://github.com/Steve132/mod_kapow
+- http://www.bennolan.com/2011/04/28/proof-of-work-in-js.html
+- https://gist.github.com/othiym23/5639370
 
