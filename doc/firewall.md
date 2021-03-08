@@ -18,12 +18,14 @@ Payload
     - everything we PoW in javascript is cute, but if someone uses another programming language, CUDA or ASIC then this is not a hurdle. we will need additional checks -> Network no writes or trafic  
     - there may be another PoW like [kaPoW](https://github.com/Steve132/mod_kapow), but we need it also in JS
 - check signature
-    - write signature (permission), can be written by everone owning the write keypair
+    - write signature (permission), can be written by everyone owning the write keypair
     - double signature, lock ownership, avoid overwrite by someone else having the write keypair
         - write_sig(identity_sig(payload))
         - update can only be done by 'identity' 
 -> reject payload
 
+- check parent (collection) type
+    - e.g. a set must only contain one element signed from the same identity
 
 PoW Examples
 
