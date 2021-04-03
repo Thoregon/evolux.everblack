@@ -5,6 +5,14 @@ Firewall
 
 A distributed replicated storage needs a firewall to avoid spam, denial of service, counterfeits, tamper and fraud.
 
+Local
+- check if indexdb entries are mofified by someone else
+
+Components
+- components will run in a sandbox
+- no direct access to local storages
+- no direct access to network
+
 Network
 - number of writes (updates) comming from another peer
     - take PoW time to guess 
