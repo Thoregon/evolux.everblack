@@ -29,6 +29,13 @@ they trust. There is no forced installation, users can always  always reject it.
 The everblack components offer a special shop where components are 
 registered, tested and evaluated.
 
+## Secure Service within the browser
+
+All operations which needs any key will be wrapped with a shared worker.
+The worker is responsible to keep the keys secure.
+
+The keys are loaded and decrypted only within the worker and never exposed.
+
 ## BlackObject structure
 
 Each black object grants access to its 'direct' attributes.
