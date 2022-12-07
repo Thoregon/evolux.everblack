@@ -191,7 +191,7 @@ An Attest/Verifiable Claim/Permission can now be requested.
     - the shared secret is now used for processing
  
 ## 2FA (two factor authentication)
-
+--> https://www.heise.de/tests/2FA-Fuenf-kostenlose-Authenticator-Apps-fuer-Android-im-Vergleich-7322126.html?wt_mc=intern.red.plus.newsticker.7-tage-news.teaser.teaser
 
 ### FIDO
 
