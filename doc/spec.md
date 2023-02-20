@@ -200,6 +200,10 @@ An Attest/Verifiable Claim/Permission can now be requested.
 - handshake procedure
 - authentication procedure
 
+### Passkey
+
+Bitwarden
+- https://www.heise.de/news/Passkeys-nachruesten-Bitwarden-schluckt-Open-Source-Start-up-Passwordless-dev-7465327.html
 
 ### Secure SMS
 
