@@ -2,7 +2,7 @@
   "name": "evolux.everblack",
   "version": "1.0.0",
   "description": "security, encryption &amp; cert component",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Thoregon/evolux.everblack/issues"
   },
-  "homepage": "https://github.com/Thoregon/evolux.everblack#readme"
+  "homepage": "https://github.com/Thoregon/evolux.everblack#readme",
+  "dependencies": {
+    "evolux.supervise": "file:../evolux.supervise",
+    "evolux.universe": "file:../evolux.universe",
+    "evolux.util": "file:../evolux.util"
+  }
 }
